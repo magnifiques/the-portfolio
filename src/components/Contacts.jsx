@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import PlanetCanvas from "./canvas/Planet";
 import { SectionWrapper } from "./wrapper/SectionWrapper";
 import { slideIn } from "../utils/animations";
+import toast from "react-hot-toast";
 
 const Contacts = () => {
   const formRef = useRef();
@@ -17,9 +18,65 @@ const Contacts = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  const handleSubmit = (e) => {};
+    setFormField({ ...formField, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        {
+          from_name: formField.name,
+          to_name: "Arpit",
+          from_email: formField.email,
+          to_email: import.meta.env.VITE_TO_EMAIL,
+          message: formField.message,
+        },
+        import.meta.env.VITE_API_KEY
+      )
+      .then(() => {
+        setLoading(false);
+        setFormField({
+          name: "",
+          email: "",
+          message: "",
+        });
+        toast(
+          `Thank you for contacting me! 
+          I will get back to you as soon as possible!`,
+          {
+            duration: 5000,
+            style: {
+              background: "green",
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "20px",
+              padding: "25px",
+            },
+          }
+        );
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+        toast("Something went wrong! Please try again later", {
+          duration: 5000,
+          style: {
+            background: "red",
+            color: "white",
+            fontWeight: "bolder",
+            fontSize: "17px",
+            padding: "20px",
+          },
+        });
+      });
+  };
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
@@ -42,7 +99,7 @@ const Contacts = () => {
               value={formField.name}
               onChange={handleChange}
               placeholder="What's your good name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:bg-zinc-700"
             />
           </label>
 
@@ -54,7 +111,7 @@ const Contacts = () => {
               value={formField.email}
               onChange={handleChange}
               placeholder="What's your web address?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:bg-zinc-700"
             />
           </label>
 
@@ -66,15 +123,21 @@ const Contacts = () => {
               value={formField.message}
               onChange={handleChange}
               placeholder="What you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium active:border-white focus:bg-zinc-700"
             />
           </label>
 
           <button
             type="submit"
-            className="bg-red-700 py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            className="bg-red-600 py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:bg-red-800"
+            disabled={
+              loading ||
+              formField.name === "" ||
+              formField.email === "" ||
+              formField.message === ""
+            }
           >
-            Send
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>

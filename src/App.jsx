@@ -8,11 +8,12 @@ import Tech from "./components/Tech";
 import Works from "./components/Works";
 import Feedbacks from "./components/Feedbacks";
 import Contacts from "./components/Contacts";
-import StarredCanvas from "./components/StarredCanvas";
-
+import Stars from "./components/canvas/StarredCanvas";
+import { Toaster } from "react-hot-toast";
 const App = () => {
   return (
     <BrowserRouter>
+      <Toaster position="top-center" />
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
@@ -25,7 +26,7 @@ const App = () => {
         {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contacts />
-          <StarredCanvas />
+          <Stars />
         </div>
       </div>
     </BrowserRouter>
