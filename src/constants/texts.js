@@ -58,6 +58,13 @@ export const navLinks = [
   },
 ];
 
+export const about = [
+  "Web Development",
+  "Graphic Design",
+  "3D Modeling",
+  "Music Reviews",
+];
+
 const services = [
   {
     title: "Web Developer",

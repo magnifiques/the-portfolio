@@ -5,22 +5,17 @@ import { Suspense } from "react";
 import CanvasLoader from "../CanvasLoader";
 
 const Diner = () => {
-  const diner = useGLTF("/diner/scene.gltf");
-
+  const scene = useGLTF("/diner/cafe.glb");
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <ambientLight intensity={0.4} />
 
-      <pointLight intensity={3} />
-      <spotLight
-        position={[5, 1, 1]}
-        // angle={0.12}
-        penumbra={1}
-        intensity={3}
-        castShadow
-        shadow-mapSize={1024}
+      <primitive
+        object={scene.scene}
+        scale={1.5}
+        position={[0, -1.5, 0]}
+        rotation={[0, Math.PI / 4, 0]}
       />
-      <primitive object={diner.scene} scale={1.5} position={[5, -4.5, -3.5]} />
     </mesh>
   );
 };
@@ -30,15 +25,18 @@ const DinerCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [5, 5, 5], fov: 75 }}
+      camera={{ fov: 75 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
-          enableRotate={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          enableRotate={true}
+          autoRotate
+          enableDamping
+          maxPolarAngle={Math.PI / 2.2}
+          minPolarAngle={Math.PI / 2.2}
+          autoRotateSpeed={1}
         />
         <Diner />
       </Suspense>
