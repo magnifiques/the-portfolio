@@ -1,23 +1,21 @@
-import { Float, OrbitControls, Preload, Stage } from "@react-three/drei";
+import { OrbitControls, Preload, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import ShoeModel from "./ShoeModel";
+import CassetteModel from "./CassetteModel";
 import CanvasLoader from "../../CanvasLoader";
 
-const Shoe = () => {
+const Walkman = () => {
   return (
     <Canvas>
       <Suspense fallback={<CanvasLoader />}>
         <Stage environment="city" intensity={0.6}>
-          <Float speed={4} rotationIntensity={2}>
-            <ShoeModel />
-          </Float>
+          <CassetteModel />
         </Stage>
-        <OrbitControls enableZoom={false} autoRotate enableRotate={false} />
+        <OrbitControls enableZoom={false} />
       </Suspense>
       <Preload all />
     </Canvas>
   );
 };
 
-export default Shoe;
+export default Walkman;

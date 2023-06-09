@@ -26,6 +26,7 @@ import nextjs from "./tech/nextjs.png";
 import blender from "./tech/blender.png";
 import sql from "./tech/sql.png";
 
+import adobe from "./tech/adobe.png";
 import afterEffect from "./tech/after-effects.png";
 import premierePro from "./tech/premiere-pro.png";
 import photoshop from "./tech/photoshop.png";
@@ -113,4 +114,5 @@ export {
   thegalaxygenerator,
   hauntedhouse,
   ragingsea,
+  adobe,
 };

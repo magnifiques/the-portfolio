@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
+import { Float, useGLTF } from "@react-three/drei";
 
 export default function ShoeModel({ color, ...props }) {
   const { nodes, materials } = useGLTF("/interests/shoe.gltf");

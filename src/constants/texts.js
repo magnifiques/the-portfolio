@@ -26,6 +26,7 @@ import {
   photoshop,
   illustrator,
   xd,
+  adobe,
   nextjs,
   blogStash,
   mintIt,
@@ -114,10 +115,10 @@ const technologies = [
     name: "Next JS",
     icon: nextjs,
   },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
+  // {
+  //   name: "Redux Toolkit",
+  //   icon: redux,
+  // },
   {
     name: "Node JS",
     icon: nodejs,
@@ -138,25 +139,29 @@ const technologies = [
     name: "Blender",
     icon: blender,
   },
+  // {
+  //   name: "After Effects",
+  //   icon: afterEffect,
+  // },
+  // {
+  //   name: "Photoshop",
+  //   icon: photoshop,
+  // },
+  // {
+  //   name: "Premiere Pro",
+  //   icon: premierePro,
+  // },
+  // {
+  //   name: "Illustrator",
+  //   icon: illustrator,
+  // },
+  // {
+  //   name: "Adobe XD",
+  //   icon: xd,
+  // },
   {
-    name: "After Effects",
-    icon: afterEffect,
-  },
-  {
-    name: "Photoshop",
-    icon: photoshop,
-  },
-  {
-    name: "Premiere Pro",
-    icon: premierePro,
-  },
-  {
-    name: "Illustrator",
-    icon: illustrator,
-  },
-  {
-    name: "Adobe XD",
-    icon: xd,
+    name: "Adobe Suite",
+    icon: adobe,
   },
 ];
 

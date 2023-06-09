@@ -4,9 +4,12 @@ import { about } from "../constants/texts";
 import { styles } from "../styles";
 import { SectionWrapper } from "./wrapper/SectionWrapper";
 import { useState } from "react";
-import Computer from "./canvas/computer/Computer";
+import Fridge from "./canvas/fridge/Fridge";
 import Shoe from "./canvas/shoe/Shoe";
-import Walkman from "./canvas/walkman/Walkman";
+import Cassette from "./canvas/cassette/Cassette";
+import Backpack from "./canvas/backpack/Backpack";
+import { Suspense } from "react";
+import CanvasLoader from "./CanvasLoader";
 
 const Interests = () => {
   const [interest, setInterest] = useState("");
@@ -17,9 +20,9 @@ const Interests = () => {
       <h2 className={styles.sectionHeadText}>My Interests</h2>
       <motion.div
         variants={fadeIn("", "", 0.1, 1)}
-        className="w-full grid grid-cols-2 items-center justify-items-center gap-4 mt-5"
+        className="w-full grid grid-cols-2  items-center justify-items-center gap-4 mt-5"
       >
-        <div className="mt-12">
+        <div className="mt-12 pt-8 pb-8">
           {about.map((text, index) => (
             <p
               className="text-[50px] font-bold text-gray-100 hover:text-gray-400  cursor-pointer"
@@ -32,13 +35,13 @@ const Interests = () => {
         </div>
         <div className="w-full h-full">
           {interest === "Web Development" ? (
-            <Computer />
+            <Fridge />
           ) : interest === "Graphic Design" ? (
-            <p>Null</p>
+            <Backpack />
           ) : interest === "3D Modeling" ? (
             <Shoe />
           ) : (
-            <Walkman />
+            <Cassette />
           )}
         </div>
       </motion.div>
