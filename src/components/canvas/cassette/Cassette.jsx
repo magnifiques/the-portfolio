@@ -1,17 +1,27 @@
-import { OrbitControls, Preload, Stage } from "@react-three/drei";
+/* eslint-disable react/no-unknown-property */
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import CassetteModel from "./CassetteModel";
 import CanvasLoader from "../../CanvasLoader";
 
-const Walkman = () => {
+const CassetteModel = () => {
+  const scene = useGLTF("/interests/cassette-transformed.glb");
+
   return (
-    <Canvas>
+    <mesh>
+      <ambientLight intensity={1} />
+      <primitive object={scene.scene} scale={9} />
+    </mesh>
+  );
+};
+
+const Cassette = () => {
+  return (
+    <Canvas camera={{ fov: 25 }}>
       <Suspense fallback={<CanvasLoader />}>
-        <Stage environment="city" intensity={0.6}>
-          <CassetteModel />
-        </Stage>
-        <OrbitControls enableZoom={false} />
+        <CassetteModel />
+
+        <OrbitControls enableZoom={false} autoRotate enableRotate={false} />
       </Suspense>
       <Preload all />
     </Canvas>

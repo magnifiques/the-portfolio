@@ -6,7 +6,7 @@ import CanvasLoader from "../../CanvasLoader";
 
 const Shoe = () => {
   return (
-    <Canvas>
+    <Canvas camera={{ fov: 25 }}>
       <Suspense fallback={<CanvasLoader />}>
         <Stage environment="city" intensity={0.6}>
           <Float speed={4} rotationIntensity={2}>

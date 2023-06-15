@@ -7,7 +7,7 @@ import { styles } from "../styles";
 
 const Tech = () => {
   return (
-    <div className="grid grid-row-2">
+    <div className="grid grid-row-2 bg">
       <motion.div variants={textVariant()} className="mb-4">
         <h3 className={styles.sectionSubText}>How do I make my projects</h3>
         <h2 className={styles.sectionHeadText}>My Skills</h2>
