@@ -5,18 +5,18 @@ import { Suspense } from "react";
 import CanvasLoader from "../../CanvasLoader.jsx";
 
 const FlowerModel = () => {
-  const scene = useGLTF("/interests/starbucks_cup.glb");
+  const scene = useGLTF("/interests/plushie_shark.glb");
   return (
     <mesh>
-      <ambientLight intensity={0.6} />
-      <primitive object={scene.scene} scale={10} position={[0, -0.7, 0]} />
+      <ambientLight intensity={1} />
+      <primitive object={scene.scene} scale={1} />
     </mesh>
   );
 };
 
 const Flower = () => {
   return (
-    <Canvas camera={{ fov: 25 }}>
+    <Canvas camera={{ fov: 20 }}>
       <Suspense fallback={<CanvasLoader />}>
         <FlowerModel />
 

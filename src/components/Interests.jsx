@@ -4,43 +4,71 @@ import { about } from "../constants/texts";
 import { styles } from "../styles";
 import { SectionWrapper } from "./wrapper/SectionWrapper";
 import { useState } from "react";
-import Burger from "./canvas/burger/Burger";
-import Shoe from "./canvas/shoe/Shoe";
-import Cassette from "./canvas/cassette/Cassette";
-import Flower from "./canvas/flower/Flower";
-import CanvasLoader from "./CanvasLoader";
 
 const Interests = () => {
   const [interest, setInterest] = useState("");
+  const [isActive, setIsActive] = useState("Web Development");
+  const [currentIndex, setIndex] = useState(0);
 
   return (
     <motion.div variants={textVariant()}>
       <p className={styles.sectionSubText}>What do I do?</p>
       <h2 className={styles.sectionHeadText}>My Interests</h2>
+
       <motion.div
         variants={fadeIn("", "", 0.1, 1)}
-        className="w-full mt-8 grid lg:grid-cols-2 justify-items-center items-center gap-2"
+        className="mt-8 grid lg:grid-cols-2 justify-items-center items-center gap-6"
       >
         <div>
           {about.map((text, index) => (
             <p
-              className="text-[50px] font-bold text-gray-100 hover:text-gray-400  cursor-pointer"
+              className={`text-[50px] ${
+                isActive === text ? "text-yellow-500" : "text-white"
+              } font-bold text-white select-none hover:text-gray-400 
+              cursor-pointer`}
               key={index}
-              onClick={() => setInterest(text)}
+              onClick={() => {
+                setIsActive(text);
+                setInterest(text);
+                setIndex(index);
+              }}
             >
               {text}
             </p>
           ))}
         </div>
-        <div className="h-full">
-          {interest === "Web Development" ? (
-            <Burger />
-          ) : interest === "Graphic Design" ? (
-            <Flower />
-          ) : interest === "3D Modeling" ? (
-            <Shoe />
+        <div className="text-[20px] bg-gray-500 text-black-100 p-8 rounded-xl">
+          {currentIndex === 0 ? (
+            <p>
+              I create web applications and UI/UX designs with a strong focus on
+              both world class design and ensuring the end product is a
+              commercial success
+            </p>
+          ) : currentIndex === 1 ? (
+            <p>
+              I design eye-catching and exquisite Illustrations, visual effects
+              and animations using the adobe suite applications such as After
+              Effects, Illustrator, Premiere Pro and Photoshop
+            </p>
+          ) : currentIndex === 2 ? (
+            <p>
+              I build 2D as well as 3D assets, characters, animations and
+              renderings using Blender and Krit
+            </p>
           ) : (
-            <Cassette />
+            <p>
+              I write music reviews of music albums, which are mostly hip-hop,
+              electronic, classic rock, pop, grunge and contemporary rock. You
+              can check them out on{" "}
+              <a
+                href="https://www.albumoftheyear.org/user/toxx/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-yellow-500"
+              >
+                Album of The Year
+              </a>
+            </p>
           )}
         </div>
       </motion.div>

@@ -28,4 +28,4 @@ const Cassette = () => {
   );
 };
 
-export default Walkman;
+export default Cassette;

@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import { textVariant, fadeIn } from "../utils/animations";
 import { SectionWrapper } from "./wrapper/SectionWrapper";
 import Cube from "./canvas/Cube";
+import Shoe from "./canvas/shoe/Shoe";
 const About = () => {
   return (
     <>
@@ -16,7 +17,7 @@ const About = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="grid grid-row-2 lg:grid-cols-2 gap-4 justify-items-center items-center mt-5"
         >
-          <Cube />
+          <Shoe />
           <p className="mt-4 text-secondary text-[20px] max-w-3xl leading-[30px]">
             I'm a skilled software developer with experience in TypeScript and
             JavaScript, and expertise in frameworks like React, Node.js, and
