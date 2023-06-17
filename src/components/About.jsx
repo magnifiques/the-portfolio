@@ -15,7 +15,7 @@ const About = () => {
 
         <motion.div
           variants={fadeIn("", "", 0.1, 1)}
-          className="grid grid-row-2 lg:grid-cols-2 gap-4 justify-items-center items-center mt-5"
+          className="grid grid-row-2 lg:grid-cols-2 gap-4 justify-items-center items-center mt-8"
         >
           <Shoe />
           <p className="mt-4 text-secondary text-[20px] max-w-3xl leading-[30px]">

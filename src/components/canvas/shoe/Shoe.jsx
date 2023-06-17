@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unknown-property */
 import {
+  Center,
   Float,
   OrbitControls,
   Preload,
+  Resize,
   Stage,
   useGLTF,
 } from "@react-three/drei";
@@ -12,22 +14,28 @@ import { Suspense } from "react";
 import CanvasLoader from "../../CanvasLoader";
 
 const ShoeModel = () => {
-  const scene = useGLTF("/interests/shoes_final.glb");
+  const scene = useGLTF("/interests/nike.glb");
 
   return (
     <mesh>
-      <ambientLight intensity={1.5} />
-      <primitive object={scene.scene} scale={0.2} position={[0, -0.5, 0]} />
+      <ambientLight intensity={0.7} />
+      <primitive object={scene.scene} scale={10} position={[0, -1, 0]} />
     </mesh>
   );
 };
 
 const Shoe = () => {
   return (
-    <Canvas camera={{ fov: 30 }}>
-      <OrbitControls autoRotate enableRotate={false} enableZoom={false} />
-      <ShoeModel />
-    </Canvas>
+    <Suspense fallback={<CanvasLoader />}>
+      <Canvas camera={{ fov: 25 }}>
+        <OrbitControls autoRotate enableRotate={false} enableZoom={false} />
+        <Float speed={1.1} rotationIntensity={1.2} floatIntensity={1}>
+          <Center>
+            <ShoeModel />
+          </Center>
+        </Float>
+      </Canvas>
+    </Suspense>
   );
 };
 
