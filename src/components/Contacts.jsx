@@ -27,6 +27,19 @@ const Contacts = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    toast(
+      "Thank you for contacting me! I will get back to you as soon as possible!",
+      {
+        duration: 5000,
+        style: {
+          background: "green",
+          color: "white",
+          fontWeight: "bold",
+          fontSize: "20px",
+          padding: "20px",
+        },
+      }
+    );
     emailjs
       .send(
         import.meta.env.VITE_SERVICE_ID,
@@ -48,7 +61,7 @@ const Contacts = () => {
           message: "",
         });
         toast(
-          `Thank you for contacting me! 
+          `Thank you for contacting me!
           I will get back to you as soon as possible!`,
           {
             duration: 5000,

@@ -28,6 +28,7 @@ const DinerCanvas = () => {
     <Canvas frameloop="demand" shadows camera={{ fov: 75 }}>
       {/* <Suspense fallback={<CanvasLoader />}> */}
       <OrbitControls
+        autoRotate
         enableZoom={false}
         enableRotate={true}
         maxPolarAngle={Math.PI / 2.2}
