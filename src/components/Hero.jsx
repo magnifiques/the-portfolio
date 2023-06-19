@@ -1,12 +1,12 @@
 import { styles } from "../styles";
-import Diner from "./canvas/Diner";
+import Cafe from "./canvas/Cafe";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[100px] lg:top-[10px] mx-auto grid lg:grid-cols-2 justify-items-center items-center gap-4`}
+        className={`${styles.paddingX} absolute inset-0 top-[100px] lg:top-[10px] mx-auto grid lg:grid-cols-2 justify-items-center items-center gap-2 lg:gap-4   `}
       >
         <div>
           {/* <div className="flex flex-col justify-center items-center mt-5">
@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <Diner />
+        <Cafe />
       </div>
       <div className="absolute xs:bottom-10 bottom-12 w-full flex justify-center items-center">
         <a href="#about">

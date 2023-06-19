@@ -37,23 +37,32 @@ const Interests = () => {
             </p>
           ))}
         </div>
-        <div className="text-[20px] bg-gray-500 text-black-100 p-8 rounded-xl">
+        <div className="text-[20px] bg-gray-300 text-black-100 p-12 rounded-xl">
           {currentIndex === 0 ? (
             <p>
-              I create web applications and UI/UX designs with a strong focus on
-              both world class design and ensuring the end product is a
-              commercial success
+              I create <span className="text-pink-700">web applications</span>{" "}
+              and <span className="text-pink-700">UI/UX designs</span> with a
+              strong focus on both world class design and ensuring the end
+              product is a commercial success
             </p>
           ) : currentIndex === 1 ? (
             <p>
-              I design eye-catching and exquisite Illustrations, visual effects
-              and animations using the adobe suite applications such as After
-              Effects, Illustrator, Premiere Pro and Photoshop
+              I design eye-catching and exquisite{" "}
+              <span className="text-pink-700">
+                Illustrations, visual effects
+              </span>{" "}
+              and <span className="text-pink-700">animations</span> using the
+              adobe suite applications such as After Effects, Illustrator,
+              Premiere Pro and Photoshop
             </p>
           ) : currentIndex === 2 ? (
             <p>
-              I build 2D as well as 3D assets, characters, animations and
-              renderings using Blender and Krit
+              I build <span className="text-pink-700">2D</span> as well as{" "}
+              <span className="text-pink-700">
+                3D assets, characters, animations
+              </span>{" "}
+              and <span className="text-pink-700">renderings</span> using
+              Blender and Krit
             </p>
           ) : (
             <p>
@@ -64,7 +73,7 @@ const Interests = () => {
                 href="https://www.albumoftheyear.org/user/toxx/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-yellow-500"
+                className="text-pink-700"
               >
                 Album of The Year
               </a>

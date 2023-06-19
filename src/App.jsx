@@ -17,19 +17,23 @@ const App = () => {
     <BrowserRouter>
       <Toaster position="top-center" />
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pink bg-cover bg-no-repeat bg-center">
+        <div className="bg-gradient-to-br from-violet-800 to-rose-700">
           <Navbar />
           <Hero />
         </div>
-        <About />
-        <div className="bg-hero-space bg-cover bg-no-repeat bg-center">
+        <div className="bg-hero-black bg-cover bg-no-repeat">
+          <About />
+        </div>
+        <div className="bg-hero-pattern bg-cover bg-no-repeat">
           <Interests />
         </div>
         {/* <Experience /> */}
-        <div className="">
+        <div className="bg-gradient-to-br from-black to-blue-950">
           <Tech />
         </div>
-        <Works />
+        <div className="bg-gradient-to-bl from-blue-950 to-black">
+          <Works />
+        </div>
         {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contacts />
