@@ -12,6 +12,7 @@ import Feedbacks from "./components/Feedbacks";
 import Contacts from "./components/Contacts";
 import Stars from "./components/canvas/StarredCanvas";
 import { Toaster } from "react-hot-toast";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <BrowserRouter>
@@ -39,6 +40,7 @@ const App = () => {
           <Contacts />
           <Stars />
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
