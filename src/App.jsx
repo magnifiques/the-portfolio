@@ -28,10 +28,10 @@ const App = () => {
           <Interests />
         </div>
         {/* <Experience /> */}
-        <div className="bg-gradient-to-br from-black to-blue-950">
+        <div className="bg-gradient-to-br from-black to-purple-900">
           <Tech />
         </div>
-        <div className="bg-gradient-to-bl from-blue-950 to-black">
+        <div className="bg-gradient-to-bl from-purple-900 to-black">
           <Works />
         </div>
         {/* <Feedbacks /> */}

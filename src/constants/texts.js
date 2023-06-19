@@ -91,10 +91,10 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
+  // {
+  //   name: "TypeScript",
+  //   icon: typescript,
+  // },
   {
     name: "Python",
     icon: python,
@@ -111,10 +111,10 @@ const technologies = [
     name: "Vue JS",
     icon: vuejs,
   },
-  {
-    name: "Next JS",
-    icon: nextjs,
-  },
+  // {
+  //   name: "Next JS",
+  //   icon: nextjs,
+  // },
   // {
   //   name: "Redux Toolkit",
   //   icon: redux,
@@ -131,10 +131,10 @@ const technologies = [
     name: "SQL",
     icon: sql,
   },
-  {
-    name: "git",
-    icon: git,
-  },
+  // {
+  //   name: "git",
+  //   icon: git,
+  // },
   {
     name: "Blender",
     icon: blender,
