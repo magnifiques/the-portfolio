@@ -25,7 +25,7 @@ const App = () => {
         <div className="bg-hero-black bg-cover bg-no-repeat">
           <About />
         </div>
-        <div className="bg-hero-pattern bg-cover bg-no-repeat">
+        <div className="bg-hero-pattern lg:bg-cover bg-no-repeat">
           <Interests />
         </div>
         {/* <Experience /> */}

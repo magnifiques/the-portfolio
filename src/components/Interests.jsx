@@ -22,9 +22,9 @@ const Interests = () => {
         <div>
           {about.map((text, index) => (
             <p
-              className={`text-[50px] ${
+              className={`text-[35px] lg:text-[50px] ${
                 isActive === text ? "text-yellow-500" : "text-white"
-              } font-bold text-white select-none hover:text-gray-400 
+              } font-bold text-white select-none lg:hover:text-gray-400 
               cursor-pointer`}
               key={index}
               onClick={() => {
@@ -37,7 +37,7 @@ const Interests = () => {
             </p>
           ))}
         </div>
-        <div className="text-[20px] bg-gray-300 text-black-100 p-12 rounded-xl">
+        <div className="text-[15px] lg:text-[20px] bg-gray-300 text-black-100 p-6 lg:p-12 rounded-xl">
           {currentIndex === 0 ? (
             <p>
               I create <span className="text-pink-700">web applications</span>{" "}

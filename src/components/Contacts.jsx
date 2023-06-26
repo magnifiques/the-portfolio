@@ -27,7 +27,7 @@ const Contacts = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    
+    console.log(formField.email);
     emailjs
       .send(
         import.meta.env.VITE_SERVICE_ID,
