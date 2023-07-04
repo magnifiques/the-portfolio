@@ -42,6 +42,7 @@ import {
   thegalaxygenerator,
   hauntedhouse,
   ragingsea,
+  airbbn,
 } from "../assets";
 
 export const navLinks = [
@@ -351,6 +352,26 @@ const WebsiteClones = [
     ],
     image: disneyplus,
     source_code_link: "https://github.com/magnifiques/disneyplus.git",
+  },
+  {
+    name: "Airbbn",
+    description: "An AirBnB clone ",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "prisma",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: airbbn,
+    source_code_link: "https://github.com/magnifiques/airbbn.git",
   },
 ];
 

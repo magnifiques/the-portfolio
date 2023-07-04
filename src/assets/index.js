@@ -48,6 +48,7 @@ import popandcorn from "./reactprojects/popandcorn.png";
 
 import netflex from "./websiteclones/netflex.png";
 import disneyplus from "./websiteclones/disneyplus.png";
+import airbbn from "./websiteclones/airbbn.png";
 
 import mealapp from "./vueprojects/mealapp.png";
 import checkmyweather from "./vueprojects/checkmyweather.png";
@@ -115,4 +116,5 @@ export {
   hauntedhouse,
   ragingsea,
   adobe,
+  airbbn,
 };
